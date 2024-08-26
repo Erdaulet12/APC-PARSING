@@ -46,7 +46,7 @@ def get_products(subcategory_url):
 	for product in soup.select('.product-layout'):
 		product_name = product.select_one('.caption h4 a span').text.strip()
 		product_link = product.select_one('.caption h4 a')['href']
-		if product_link not in visited_urls:  # Проверяем, был ли URL уже посещён
+		if product_link not in visited_urls:
 			visited_urls.add(product_link)
 			products.append((product_name, product_link))
 	return products
